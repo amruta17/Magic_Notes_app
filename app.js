@@ -45,7 +45,7 @@ notesObj.forEach(function(element, index){
     <div class="card-body">
         <h5 class="card-title">Note ${index+1}</h5>
         <p class="card-text">${element}</p>
-        <button class="btn btn-primary"> delete note</button>
+        <button style=" background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color: black "  class="btn btn-primary"> delete note</button>
     </div>
 </div>`;
 
