@@ -40,12 +40,12 @@ function shownotes(){
 
 let html="";
 notesObj.forEach(function(element, index){
-    html +=`<div class=" my-2 mx-2 card" style="width: 18rem; background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
+    html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
 
-    <div class="card-body" style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
+    <div class="card-body "  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
         <h5 class="card-title">Note ${index+1}</h5>
-        <p class="card-text" style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${element}</p>
-        <button  id="${index+1}" onclick="deleteNote(this.id)" "style=" background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color: black "  class="btn btn-primary"> delete note</button>
+        <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${element}</p>
+        <button  id="${index}" onclick="deleteNote(this.id)"   class="btn btn-primary" style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;"> delete note</button>
     </div>
 </div>`;
 
@@ -79,15 +79,27 @@ function deleteNote(index){
         
 }
 // for serching
-let searchTxt=document.getElementById('searchtxt');
-searchTxt.addEventListener("input",function(){
-
-let inputval=searchTxt.value;
-    console.log("input event fired", inputval);
+let search=document.getElementById('searchtxt');
+search.addEventListener("input",function(){
+    let input=document.getElementById('searchtxt').value;
+    input=input.toLowerCase();
+    let x=document.getElementsByClassName('notecard');
+    for(i=0;i<x.length; i++){
+        if(!x[i].innerHTML.toLowerCase().includes(input)){
+ x[i].style.display="none";
+        }
+        else{
+            x[i].style.display="block";
+        }
+    }
 
 });
 
 
+
+// });
+// });
+ 
 
 
 
