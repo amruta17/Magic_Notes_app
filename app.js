@@ -4,9 +4,17 @@ shownotes();
 
 let addBtn= document.getElementById('addBtn');
 //console.log(addBtn);
-addBtn.addEventListener("click", function(e){
+addBtn.addEventListener("click", function(){
     let addTxt= document.getElementById('addTxt');
-    //console.log(addTxt);
+     console.log(addTxt);
+     let len=addTxt.value.length;
+     console.log(len);
+
+    if(len === 0){
+        alert("please write something in the text box first!!");
+    }
+
+    else{
      let notes= localStorage.getItem('notes');
      //console.log(notes);
      if(notes=== null) {
@@ -23,8 +31,9 @@ addBtn.addEventListener("click", function(e){
      addTxt.value="";
      console.log(notesObj);
      shownotes();
+    }
     
-})
+});
 function shownotes(){
     let notes= localStorage.getItem('notes');
      //console.log(notes);
@@ -39,9 +48,10 @@ function shownotes(){
      }
 
 let html="";
-notesObj.forEach(function(element, index){
+notesObj.forEach(function(element, index,title){
     html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
-
+    <h5 class="card-title"> title</h5>
+    <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${title}</p>
     <div class="card-body "  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
         <h5 class="card-title">Note ${index+1}</h5>
         <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${element}</p>
@@ -97,9 +107,7 @@ search.addEventListener("input",function(){
 
 
 
-// });
-// });
- 
+
 
 
 
