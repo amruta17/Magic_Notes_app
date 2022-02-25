@@ -49,12 +49,12 @@ function shownotes(){
 
 let html="";
 notesObj.forEach(function(element, index){
-    html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
+    html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background-color: #a5f3fc; color:black;">
 
-    <div class="card-body "  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
+    <div class="card-body "  style="background-color:#0891b2; color:black;">
         <h5 class="card-title">Note ${index+1}</h5>
-        <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${element}</p>
-        <button  id="${index}" onclick="deleteNote(this.id)"   class="btn btn-primary" style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;"> delete note</button>
+        <p class="cardtext"  style="background-color: #a5f3fc; color:black;">${element}</p>
+        <button  id="${index}" onclick="deleteNote(this.id)"   class="btn btn-primary" style="background-color:#a5f3fc; color:black;"><strong> delete note </strong></button>
     </div>
 </div>`;
 
