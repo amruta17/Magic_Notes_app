@@ -48,10 +48,9 @@ function shownotes(){
      }
 
 let html="";
-notesObj.forEach(function(element, index,title){
+notesObj.forEach(function(element, index){
     html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
-    <h5 class="card-title"> title</h5>
-    <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${title}</p>
+
     <div class="card-body "  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">
         <h5 class="card-title">Note ${index+1}</h5>
         <p class="cardtext"  style="background: linear-gradient(120deg, red, yellow, rgb(204, 204, 255)); color:black;">${element}</p>
