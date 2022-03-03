@@ -6,6 +6,7 @@ let addBtn= document.getElementById('addBtn');
 //console.log(addBtn);
 addBtn.addEventListener("click", function(){
     let addTxt= document.getElementById('addTxt');
+    let addtitle=document.getElementById('addTitle');
      console.log(addTxt);
      let len=addTxt.value.length;
      console.log(len);
@@ -26,9 +27,14 @@ addBtn.addEventListener("click", function(){
         notesObj=JSON.parse(notes);
          
      }
-     notesObj.push(addTxt.value);
+     let myobj={
+         title: addtitle.value,
+         text:addTxt.value
+     }
+     notesObj.push(myobj);
      localStorage.setItem("notes", JSON.stringify(notesObj));
      addTxt.value="";
+     addtitle.value="";
      console.log(notesObj);
      shownotes();
     }
@@ -52,8 +58,8 @@ notesObj.forEach(function(element, index){
     html +=`<div class=" notecard my-2 mx-2 card "  style="width:18rem; background-color: #a5f3fc; color:black;">
 
     <div class="card-body "  style="background-color:#0891b2; color:black;">
-        <h5 class="card-title">Note ${index+1}</h5>
-        <p class="cardtext"  style="background-color: #a5f3fc; color:black;">${element}</p>
+        <h5 class="card-title"> ${element.title}</h5>
+        <p class="cardtext"  style="background-color: #a5f3fc; color:black;">${element.text}</p>
         <button  id="${index}" onclick="deleteNote(this.id)"   class="btn btn-primary" style="background-color:#a5f3fc; color:black;"><strong> delete note </strong></button>
     </div>
 </div>`;
