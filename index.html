@@ -10,7 +10,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body style=" background-color: #a5f3fc; color:black;">
+<body style=" background-color: #f9a8d4; color:black;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid" >
             <a class="navbar-brand" href="#">Magic Notes</a>
@@ -35,23 +35,24 @@
     <div class="container my-3 mx--8" >
         <h1>Welcome To Magic Notes App</h1>
         <!-- <h4>here you can add and delete app </h4> -->
-        <div class="card "  style="background-color: #0891b2; color:black;">
+        <div class="card "  style="background-color: #f9a8d4; color:black; border:none;  ">
              <div class="card-body"  >
               
                 <h5 class="card-title"> Add a Title</h5>
                 <div class="input-group mb-3">
                     
-                    <input type="text" class="form-control title" id="addTitle" placeholder="Enter Title" aria-label="title" aria-describedby="title">
+                    <input style="border: 2px solid black; background-color: #f9a8d4;"
+                    type="text" class="form-control title" id="addTitle" placeholder="Enter Title" aria-label="title" aria-describedby="title">
                   </div>
                   <h5 class="card-title"> Add a Note</h5>
                 <div class="form-group">
-                    <textarea class="form-control" id="addTxt" rows="4" style="background-color: #a5f3fc; color:black;"></textarea>
+                    <textarea class="form-control" id="addTxt" rows="4" style="background-color: #f9a8d4; color:black; border: 2px solid black;"></textarea>
                 </div>
-                <button  class="btn btn-primary my-2" id="addBtn" style="background-color:#a5f3fc; color:black;"><strong>Add Note</strong></button>
+                <button  class="btn btn-primary my-2" id="addBtn" style="background-color:#db2777; color:black; border: 2px solid black;"><strong>Add Note</strong></button>
             </div>
         </div>
         <hr >
-        <h1 style=" background-color:a5f3fc; height: 10vh;">Your Notes</h1>
+        <h3 style=" background-color:a5f3fc; height: 5vh;">Your Notes</h3>
         <hr>
         <div id="notes" class="row container-fluid">
            .7
